@@ -7,6 +7,7 @@
     <groupId>com.hjx.mylottery</groupId>
     <artifactId>mylottery</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>lottery-application</module>
         <module>lottery-common</module>
@@ -15,12 +16,12 @@
         <module>lottery-interfaces</module>
         <module>lottery-rpc</module>
     </modules>
-    <packaging>pom</packaging>
+
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Base -->
+        <jdk.version>1.8</jdk.version>
+        <sourceEncoding>UTF-8</sourceEncoding>
     </properties>
 
     <parent>
@@ -29,6 +30,16 @@
         <version>2.3.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.5.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
