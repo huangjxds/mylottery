@@ -41,7 +41,6 @@ public class DrawAlgorithmTest {
         List<String> excludeAwardIds = new ArrayList<>();
         excludeAwardIds.add("二等奖：iphone");
         excludeAwardIds.add("四等奖：AirPods");
-
         for (int i = 0; i < 20; i++) {
             System.out.println("中奖结果：" + randomDrawAlgorithm.randomDraw(100001L, excludeAwardIds));
         }
