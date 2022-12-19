@@ -1,4 +1,4 @@
-package com.hjx.mylottery.test;
+package com.hjx.mylottery.test.domain;
 
 import com.hjx.mylottery.domain.strategy.model.vo.AwardRateInfo;
 import com.hjx.mylottery.domain.strategy.service.algorithm.IDrawAlgorithm;

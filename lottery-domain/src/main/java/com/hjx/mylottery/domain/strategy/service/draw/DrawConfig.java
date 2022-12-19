@@ -2,6 +2,8 @@ package com.hjx.mylottery.domain.strategy.service.draw;
 
 import com.hjx.mylottery.common.Constants;
 import com.hjx.mylottery.domain.strategy.service.algorithm.IDrawAlgorithm;
+import com.hjx.mylottery.domain.strategy.service.algorithm.impl.EntiretyRateRandomDrawAlgorithm;
+import com.hjx.mylottery.domain.strategy.service.algorithm.impl.SingleRateRandomDrawAlgorithm;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;

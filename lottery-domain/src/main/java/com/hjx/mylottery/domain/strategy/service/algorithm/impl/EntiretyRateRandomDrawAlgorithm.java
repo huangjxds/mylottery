@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("EntiretyRateRandomDrawAlgorithm")
+@Component("entiretyRateRandomDrawAlgorithm")
 public class EntiretyRateRandomDrawAlgorithm extends BaseAlgorithm {
 
     @Override

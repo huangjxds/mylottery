@@ -1,8 +1,9 @@
 package com.hjx.mylottery.domain.strategy.service.draw;
 
 import com.hjx.mylottery.domain.strategy.model.aggregates.StrategyRich;
+import com.hjx.mylottery.domain.strategy.model.vo.AwardBriefVO;
 import com.hjx.mylottery.domain.strategy.repository.IStrategyRepository;
-import com.hjx.mylottery.infrastructure.po.Award;
+
 
 import javax.annotation.Resource;
 
@@ -26,7 +27,7 @@ public class DrawStrategySupport extends DrawConfig {
      * @param awardId 奖品ID
      * @return 中奖详情
      */
-    protected Award queryAwardInfoByAwardId(String awardId){
+    protected AwardBriefVO queryAwardInfoByAwardId(String awardId){
         return strategyRepository.queryAwardInfo(awardId);
     }
 
