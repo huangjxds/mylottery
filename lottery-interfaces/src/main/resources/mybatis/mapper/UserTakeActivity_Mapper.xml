@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.itedus.lottery.infrastructure.dao.IUserTakeActivityDao">
+<mapper namespace="com.hjx.mylottery.infrastructure.dao.IUserTakeActivityDao">
 
-    <resultMap id="userTakeActivityMap" type="cn.itedus.lottery.infrastructure.po.UserTakeActivity">
+    <resultMap id="userTakeActivityMap" type="com.hjx.mylottery.infrastructure.po.UserTakeActivity">
         <id column="id" property="id"/>
         <result column="u_id" property="uId"/>
         <result column="take_id" property="takeId"/>
@@ -15,7 +15,7 @@
         <result column="update_time" property="updateTime"/>
     </resultMap>
 
-    <insert id="insert" parameterType="cn.itedus.lottery.infrastructure.po.UserTakeActivity">
+    <insert id="insert" parameterType="com.hjx.mylottery.infrastructure.po.UserTakeActivity">
         INSERT INTO user_take_activity
         (u_id, take_id, activity_id, activity_name, take_date,
          take_count, uuid, create_time, update_time)
