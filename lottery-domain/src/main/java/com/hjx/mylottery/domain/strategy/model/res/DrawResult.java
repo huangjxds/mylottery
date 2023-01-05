@@ -73,4 +73,20 @@ public class DrawResult {
     public void setAwardName(String awardName) {
         this.awardName = awardName;
     }
+
+    public Integer getDrawState() {
+        return drawState;
+    }
+
+    public void setDrawState(Integer drawState) {
+        this.drawState = drawState;
+    }
+
+    public DrawAwardInfo getDrawAwardInfo() {
+        return drawAwardInfo;
+    }
+
+    public void setDrawAwardInfo(DrawAwardInfo drawAwardInfo) {
+        this.drawAwardInfo = drawAwardInfo;
+    }
 }

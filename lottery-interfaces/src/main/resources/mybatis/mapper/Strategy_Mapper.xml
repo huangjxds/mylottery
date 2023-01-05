@@ -20,12 +20,12 @@
                #{grantDate}, #{extInfo}, NOW(), NOW())
     </insert>
 
-    <select id="queryStrategy" parameterType="java.lang.Long" resultType="com.hjx.mylottery.infrastructure.po.Strategy">
+    <select id="queryStrategy" parameterType="java.lang.Long" resultMap="strategyMap">
         SELECT
-            id, strategyId, strategyDesc, strategyMode, grantType,
-            grantDate, extInfo , createTime, updateTime
+            id, strategy_id, strategy_desc, strategy_mode, grant_type,
+            grant_date, ext_info, create_time, update_time
         FROM strategy
-        WHERE strategyId = #{strategyId}
+        WHERE strategy_id = #{strategyId}
     </select>
 
 </mapper>
