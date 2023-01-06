@@ -2,17 +2,17 @@ package com.hjx.mylottery.domain.strategy.model.vo;
 
 import java.math.BigDecimal;
 
-public class AwardRateInfo {
+public class AwardRateVO {
     // 奖品ID
     private String awardId;
 
     // 中奖概率
     private BigDecimal awardRate;
 
-    public AwardRateInfo() {
+    public AwardRateVO() {
     }
 
-    public AwardRateInfo(String awardId, BigDecimal awardRate) {
+    public AwardRateVO(String awardId, BigDecimal awardRate) {
         this.awardId = awardId;
         this.awardRate = awardRate;
     }

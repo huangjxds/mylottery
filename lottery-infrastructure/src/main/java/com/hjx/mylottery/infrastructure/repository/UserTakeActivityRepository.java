@@ -10,12 +10,12 @@ import com.hjx.mylottery.infrastructure.dao.IUserTakeActivityDao;
 import com.hjx.mylottery.infrastructure.po.UserStrategyExport;
 import com.hjx.mylottery.infrastructure.po.UserTakeActivity;
 import com.hjx.mylottery.infrastructure.po.UserTakeActivityCount;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.Date;
 
-@Component
+@Repository
 public class UserTakeActivityRepository implements IUserTakeActivityRepository {
     @Resource
     private IUserTakeActivityCountDao userTakeActivityCountDao;

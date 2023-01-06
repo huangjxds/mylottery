@@ -1,7 +1,7 @@
 package com.hjx.mylottery.domain.strategy.service.algorithm;
 
 import com.hjx.mylottery.common.Constants;
-import com.hjx.mylottery.domain.strategy.model.vo.AwardRateInfo;
+import com.hjx.mylottery.domain.strategy.model.vo.AwardRateVO;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -19,17 +19,17 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm {
     protected Map<Long, String[]> rateTupleMap = new ConcurrentHashMap<>();
 
     // 奖品区间概率值，strategyId -> [awardId->begin、awardId->end]
-    protected Map<Long, List<AwardRateInfo>> awardRateInfoMap = new ConcurrentHashMap<>();
+    protected Map<Long, List<AwardRateVO>> awardRateInfoMap = new ConcurrentHashMap<>();
 
     @Override
-    public void initRateTuple(Long strategyId, Integer strategyMode, List<AwardRateInfo> awardRateInfoList) {
+    public void initRateTuple(Long strategyId, Integer strategyMode, List<AwardRateVO> awardRateVOList) {
         // 前置判断
         if (isExist(strategyId)){
             return;
         }
 
         // 保存奖品概率信息
-        awardRateInfoMap.put(strategyId, awardRateInfoList);
+        awardRateInfoMap.put(strategyId, awardRateVOList);
 
         // 非单项概率，不必存入缓存，因为这部分抽奖算法需要实时处理中奖概率。
         if (!Constants.StrategyMode.SINGLE.getCode().equals(strategyMode)) {
@@ -39,12 +39,12 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm {
         String[] rateTuple = rateTupleMap.computeIfAbsent(strategyId, k -> new String[RATE_TUPLE_LENGTH]);
 
         int cursorVal = 0;
-        for (AwardRateInfo awardRateInfo : awardRateInfoList) {
-            int rateVal = awardRateInfo.getAwardRate().multiply(new BigDecimal(100)).intValue();
+        for (AwardRateVO awardRateVO : awardRateVOList) {
+            int rateVal = awardRateVO.getAwardRate().multiply(new BigDecimal(100)).intValue();
 
             // 循环填充概率范围值
             for (int i = cursorVal + 1; i <= (rateVal + cursorVal); i++) {
-                rateTuple[hashIdx(i)] = awardRateInfo.getAwardId();
+                rateTuple[hashIdx(i)] = awardRateVO.getAwardId();
             }
 
             cursorVal += rateVal;

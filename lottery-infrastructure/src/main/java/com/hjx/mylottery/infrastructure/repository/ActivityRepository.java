@@ -7,13 +7,13 @@ import com.hjx.mylottery.domain.activity.repository.IActivityRepository;
 import com.hjx.mylottery.infrastructure.dao.*;
 import com.hjx.mylottery.infrastructure.po.*;
 import org.springframework.beans.BeanUtils;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 public class ActivityRepository implements IActivityRepository {
 
     @Resource
